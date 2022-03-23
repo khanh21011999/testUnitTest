@@ -1,3 +1,4 @@
+import FetchData from './fetchData';
 import sum from './sum';
 
 test('2+2 equal 4', () => {
@@ -20,4 +21,19 @@ const shoppingList = [
 test('the shopping list has milk on it', () => {
   expect(shoppingList).toContain('milk');
   expect(new Set(shoppingList)).toContain('milk');
+});
+test('zero', () => {
+  const z = 0;
+  expect(z).not.toBeNull();
+  expect(z).toBeDefined();
+  expect(z).not.toBeUndefined();
+  expect(z).not.toBeTruthy();
+  expect(z).toBeFalsy();
+});
+test('Fetch URL', () => {
+  return FetchData().then(data => {
+    expect(data[0].title).toBe(
+      'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+    );
+  });
 });
