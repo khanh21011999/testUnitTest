@@ -30,10 +30,3 @@ test('zero', () => {
   expect(z).not.toBeTruthy();
   expect(z).toBeFalsy();
 });
-test('Fetch URL', () => {
-  return FetchData().then(data => {
-    expect(data[0].title).toBe(
-      'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-    );
-  });
-});
